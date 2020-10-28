@@ -16,17 +16,17 @@ layout = html.Div([
     html.H1('General Product sales', style = {'textAlign' : 'center'}),
     html.Div([
         html.Div([
-            html.Pre(children = 'Payment type', style= {'fontsize': '150%'}),
+            html.Pre(children = 'Mode of payment', style= {'fontsize': '150%'}),
             dcc.Dropdown(
-                id ='payment-dropdown', value = '', clearable = False,
+                id ='payment-dropdown', value = 'DEBIT', clearable = False,
                 persistence = True, persistence_type = 'session',
                 options=[{'label': x, 'value': x} for x in sorted(dfg["Type"].unique())]
             )
         ], className = 'six columns'),
         html.Div([
-            html.Pre(children = 'Country of Destination', style = {'fontsize':'150%'}),
+            html.Pre(children = 'Destination Country', style = {'fontsize':'150%'}),
             dcc.Dropdown(
-                id = 'country-dropdown', value ='', clearable = False,
+                id = 'country-dropdown', value ='Georgia', clearable = False,
                 persistence = True, persistence_type = 'local',
                 options = [{'label': x, 'value': x} for x in sorted(dfg["Order Country"].unique())]
             )
