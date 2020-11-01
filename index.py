@@ -12,8 +12,8 @@ from apps import vgames, global_sales
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div([
-        dcc.Link('Video Games | ', href='/apps/vgames'),
-        dcc.Link('Other Products', href='/apps/global_sales'),
+        dcc.Link('Video Games Sales | ', href='/apps/vgames'),
+        dcc.Link('Other Products Sales', href='/apps/global_sales'),
     ], className="row"),
     html.Div(id='page-content', children=[])
 ])
@@ -27,7 +27,7 @@ def display_page(pathname):
     if pathname == '/apps/global_sales':
         return global_sales.layout
     else:
-        return "404 Page Error! Please choose a link"
+        return vgames.layout
 
 
 if __name__ == '__main__':
